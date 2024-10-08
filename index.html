@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Quiz</title>
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(17, 118, 250), rgb(151, 255, 31));
+            color: white; /* Texto em branco para melhor contraste */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            display: flex; /* Flexbox */
+            flex-direction: column; /* Direção da coluna */
+            align-items: center; /* Centraliza horizontalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            height: 100vh; /* Altura total da viewport */
+            padding: 20px; /* Espaçamento interno */
+            margin: 0; /* Remove margens padrão */
+        }
+        form {
+            margin-bottom: 20px; /* Espaçamento entre os formulários */
+            text-align: left; /* Alinha o texto à esquerda dentro do formulário */
+        }
+        label {
+            margin-left: 10px; /* Espaçamento entre o input e o label */
+        }
+        input[type="button"] {
+            background-color: white; /* Botão branco */
+            color: blue; /* Texto do botão azul */
+            border: none; /* Sem borda */
+            padding: 10px 15px; /* Padding do botão */
+            cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+        input[type="button"]:hover {
+            background-color: lightgray; /* Cor ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <p>1° Pergunta: Qual meu maior sonho?</p>
+    <form action="">
+        <input type="radio" id="dream1" name="dream" value="Viajar o mundo">
+        <label for="dream1">Viajar o mundo</label><br>
+
+        <input type="radio" id="dream2" name="dream" value="Não precisar mais trabalhar">
+        <label for="dream2">Não precisar mais trabalhar</label><br>
+
+        <input type="radio" id="dream3" name="dream" value="Viver de investimentos">
+        <label for="dream3">Viver de investimentos</label><br>
+
+        <input type="radio" id="dream4" name="dream" value="Voar">
+        <label for="dream4">Voar</label><br>
+
+        <input type="radio" id="dream5" name="dream" value="Acabar com toda fome, desigualdade, injustiça e discriminação do mundo!">
+        <label for="dream5">Acabar com toda fome, desigualdade, injustiça e discriminação do mundo!</label><br>
+
+        <input type="button" onclick="checkDream()" value="ok">
+    </form>
+
+    <p>2° Pergunta: Qual minha cor favorita?</p>
+    <form action="">
+        <input type="radio" id="color1" name="color" value="Azul">
+        <label for="color1">Azul</label><br>
+
+        <input type="radio" id="color2" name="color" value="Vermelho">
+        <label for="color2">Vermelho</label><br>
+
+        <input type="radio" id="color3" name="color" value="Roxo">
+        <label for="color3">Roxo</label><br>
+
+        <input type="radio" id="color4" name="color" value="Não sei">
+        <label for="color4">Não sei</label><br>
+
+        <input type="button" onclick="checkColor()" value="ok">
+    </form>
+
+    <p>3° Pergunta: O que mais me irrita?</p>
+    <form action="">
+        <input type="radio" id="irritation1" name="irritation" value="arranhar panela">
+        <label for="irritation1">Arranhar panela</label><br>
+
+        <input type="radio" id="irritation2" name="irritation" value="andar com uma faca na mão">
+        <label for="irritation2">Andar com uma faca na mão</label><br>
+
+        <input type="radio" id="irritation3" name="irritation" value="não falar o que está havendo">
+        <label for="irritation3">Não falar o que está havendo</label><br>
+
+        <input type="radio" id="irritation4" name="irritation" value="não lavar o prato">
+        <label for="irritation4">Não lavar o prato</label><br>
+
+        <input type="button" onclick="checkIrritation()" value="ok">
+    </form>
+
+    <script>
+        function checkDream() {
+            const selectedDream = document.querySelector('input[name="dream"]:checked');
+
+            if (selectedDream) {
+                if (selectedDream.value === 'Voar') { // Resposta correta para o maior sonho
+                    alert("Você acertou!");
+                } else {
+                    alert('Errou!');
+                }
+            } else {
+                alert('Por favor, selecione uma resposta.');
+            }
+        }
+
+        function checkColor() {
+            const selectedColor = document.querySelector('input[name="color"]:checked');
+
+            if (selectedColor) {
+                if (selectedColor.value === 'Não sei') { // Resposta correta para a cor favorita
+                    alert("Você acertou!");
+                } else {
+                    alert('Errou!');
+                }
+            } else {
+                alert('Por favor, selecione uma resposta.');
+            }
+        }
+
+        function checkIrritation() {
+            const selectedIrritation = document.querySelector('input[name="irritation"]:checked');
+
+            if (selectedIrritation) {
+                if (selectedIrritation.value === 'não falar o que está havendo') { // Resposta correta para o que irrita
+                    alert("Você acertou!");
+                } else {
+                    alert('Errou!');
+                }
+            } else {
+                alert('Por favor, selecione uma resposta.');
+            }
+        }
+    </script>
+</body>
+</html>
